@@ -36,6 +36,9 @@ public class MessageHandler {
 
     public static void handlePrefix(MessageReceivedEvent e){
         String[] args = getArgumentList(e.getMessage().getContentRaw());
+        if(args[0].contains("~~")){
+            return;
+        }
         if (args.length == 2) {
             if(args[0].equals("~add") && !e.getMessage().getAttachments().isEmpty()){
                 File file = new File("quotes/" + e.getMessage().getAttachments().get(0).getFileName());
