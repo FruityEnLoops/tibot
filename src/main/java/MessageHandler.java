@@ -51,7 +51,9 @@ public class MessageHandler {
                 e.getChannel().sendMessage("You need to provide a file to create your quote.").queue();
             } else if(args[0].equals("~remove")){
                 // TODO redo it so it works
-                e.getChannel().sendMessage("Specified quote not found").queue();
+                e.getChannel().sendMessage("Quote " + args[1] + " not found.").queue();
+            } else {
+                e.getChannel().sendMessage("You typed the prefix, but you didn't make any sense. Maybe try doing `" + Main.prefix + "help` ?").queue();
             }
         } else if(args.length == 1){
             if(args[0].equals("~help")) {
@@ -59,9 +61,12 @@ public class MessageHandler {
                         "Bot prefix : `" + Main.prefix + "`\n" +
                         "`add <trigger text>` (+ attach your file) - Adds a quote that will trigger when the text is detected in the message, and send the provided file\n" +
                         "`remove <trigger text>` - Removes the quote triggered with trigger text.\n" +
-                        "`help` - what you're reading right now\n\n").queue();
+                        "`help` - what you're reading right now\n\n" +
+                        "tiBot by FruityEnLoops / blobdash - Source at https://github.com/FruityEnLoops/tibot").queue();
             } else if(args[0].equals("~tibo")) {
                 e.getChannel().sendFile(new File("quotes/tibo.wav")).queue();
+            } else {
+                e.getChannel().sendMessage("You typed the prefix, but you didn't make any sense. Maybe try doing `" + Main.prefix + "help` ?").queue();
             }
         } else {
             e.getChannel().sendMessage("You typed the prefix, but you didn't make any sense. Maybe try doing `" + Main.prefix + "help` ?").queue();
