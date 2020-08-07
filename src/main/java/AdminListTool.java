@@ -8,9 +8,10 @@ public class AdminListTool {
     public static final String version = "0.01";
     private static final int UID_LENGTH = 18;
 
-    public static void main(){
+    public static void main(String[] args){
         System.out.println("AdminListTool v" + version);
-        String uid = readUID();
+        String uid;
+        uid = (args.length > 0 && args[0] != null) ? args[0] : readUID();
         ArrayList<Long> list = new ArrayList<>();
         list.add(Long.parseLong(uid));
         saveSerializedAdminList(list);
