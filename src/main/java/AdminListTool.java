@@ -42,8 +42,8 @@ public class AdminListTool {
             stream.close();
             System.out.println("Success.");
         } catch (IOException e) {
-            // file is locked by another process, or file is non existent even though it was previously opened
-            System.out.println("Admin list object \"adminList.obj\" failed to save. Check you write privileges.");
+            // file is locked by another process, or file is non existent even though it was previously opened, or couldn't write file
+            System.out.println("Admin list object \"adminList.obj\" failed to save. Check your write privileges.");
         }
     }
 }
