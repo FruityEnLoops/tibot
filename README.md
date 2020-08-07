@@ -18,7 +18,7 @@ Administration of the bot (see quote list, shutdown) is handled by creating a li
 
 Currently the way it works is with a list of authorized Discord UIDs. People in that list can add or remove UIDs from the list (be careful as you can remove yourself!).
 
-A tool will be created to generate an adminList config with pre entered UIDs. As of now, there is no way to add yourself without messing with the code, if you're not already in the list.
+The AdminListTool can be used to generate an adminList.obj file with custom Discord UIDs.
 
 Bot admin commands are called using `!botadmin <command>`.
 
@@ -50,7 +50,7 @@ tiBot/
 ```
 Please note that if the quotes directory is not present, quotes will be created but they won't work, as the bot cannot save the files.
 
-adminList.obj is not necessary, but is very useful when it comes to managing the bot.
+adminList.obj is not necessary, but is very useful when it comes to managing the bot with only Discord itself, via direct messages.
 
 ##### Running
 
@@ -61,4 +61,4 @@ In a terminal, run :
 
 - Fix the remove quote command. Not working currently.
 
-- adminList creation tool
+- adminList creation tool (done but needs a build task)
