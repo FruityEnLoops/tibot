@@ -1,3 +1,5 @@
+package bot;
+
 import java.util.TimerTask;
 
 public class SaveThread extends TimerTask {
