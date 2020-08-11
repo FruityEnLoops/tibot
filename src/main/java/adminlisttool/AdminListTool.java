@@ -1,3 +1,5 @@
+package adminlisttool;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -5,13 +7,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AdminListTool {
-    public static final String version = "0.01";
+    public static final String version = "0.02";
     private static final int UID_LENGTH = 18;
 
     public static void main(String[] args){
         System.out.println("AdminListTool v" + version);
         String uid;
-        uid = (args.length > 0 && args[0] != null) ? args[0] : readUID();
+        uid = (args.length > 0 && args[0] != null && checkUID(args[0])) ? args[0] : readUID();
         ArrayList<Long> list = new ArrayList<>();
         list.add(Long.parseLong(uid));
         saveSerializedAdminList(list);
